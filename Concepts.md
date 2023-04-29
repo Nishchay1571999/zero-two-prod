@@ -8,11 +8,13 @@
         cargo install -f cargo-binutils
         rustup component add llvm-tools-preview
         ```
+        Add the following to your Cargo.toml
+        ```
         [target.x86_64-pc-windows-msvc]
         rustflags = ["-C", "link-arg=-fuse-ld=lld"]
         [target.x86_64-pc-windows-gnu]
         rustflags = ["-C", "link-arg=-fuse-ld=lld"]
-        
+        ```
         # On Linux:
         # - Ubuntu, 
         ```
@@ -22,6 +24,7 @@
         ```
         sudo pacman -S lld clang
         ```
+        Add the following to your Cargo.toml
         ```
         [target.x86_64-unknown-linux-gnu]
         rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
@@ -30,6 +33,7 @@
          ```
          brew install michaeleisel/zld/zld
         ```
+        Add the following to your Cargo.toml
         ```
         [target.x86_64-apple-darwin]
         rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
