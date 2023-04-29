@@ -40,4 +40,22 @@
         [target.aarch64-apple-darwin]
         rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
         ```
-    - 
+    - Could also use watcher like cargo-watch
+
+    - Testing command :
+    ```
+    cargo test
+    ```
+    does a unit test for the rust project with the written test cases.
+    
+    ```
+    cargo tarpaulin --ignore-tests
+    ```
+    computes code coverage for the project(i.e, collects data weather the part of project has been ovelooked or beeen not tested)
+    - Linting can be done using a package like clippy
+
+    - Security Vulnarabilities 
+    ```
+    cargo audit
+    ```
+    -
